@@ -9,6 +9,8 @@
         let age = currentYear - birthDate;
         if(age >= 18){
           console.log('vote dey go jor');
+          displayArea.innerHTML = `<p>enjoy voting</p>`
+          
         }else{
           console.log('grow up');
           
