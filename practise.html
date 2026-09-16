@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- INEC is developing a voter registration system. Write a function that takes a person's birth year and determines if they are eligible to vote (18 years or older in 2026). The function should also return how many years until they can vote if they're not eligible yet.
+ -->
+
+    <div class="col-9 col-lg-6 col-md-5 p-3 p-lg-5 shadow my-3 my-lg-3 mx-auto">
+      <h3 class="text-center">INEC Voting Eligibility Checker</h3>
+      <input id="userInput"
+        class="form-control-sm form-control"
+        type="number"
+        placeholder="Enter your birth year"
+      />
+      <button onclick="checkEligibility()" class="btn btn-outline-dark btn-sm w-100 my-3">Check</button>
+      <div class="text-center" id="show">Your result will show here</div>
+    </div>
+
+    <script>
+      function checkEligibility(){
+        let userDate = document.getElementById('userInput').value;
+        let displayArea =  document.getElementById('show');
+        if(userDate == ''){
+          alert('input should not be empty')
+      }else {
+        let birthDate = Number(userDate);
+        let currentYear = new Date().getFullYear()
+        let age = currentYear - birthDate;
+        if(age >= 18){
+          console.log('vote dey go jor');
+        }else{
+          console.log('grow up');
+          
+        }
+
+      }
+    }
+    </script>
+  </body>
+</html>
